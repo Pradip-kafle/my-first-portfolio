@@ -70,6 +70,8 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    z-index: 1001;
+    padding: 5px;
 }
 
 .bar {
@@ -78,6 +80,20 @@ body {
     background-color: #333;
     margin: 3px 0;
     transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Hamburger animation */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Hero Section */
@@ -551,9 +567,10 @@ section {
         background-color: white;
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: 0.3s ease;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
+        z-index: 1000;
     }
 
     .nav-menu.active {
@@ -607,7 +624,7 @@ section {
 /* Mobile Medium (481px - 575px) */
 @media (max-width: 575px) and (min-width: 481px) {
     .hamburger {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-menu {
@@ -684,7 +701,7 @@ section {
 /* Mobile Small (320px - 480px) - iPhone SE, small Android */
 @media (max-width: 480px) {
     .hamburger {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-menu {
